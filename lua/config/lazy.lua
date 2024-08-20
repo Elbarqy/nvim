@@ -62,6 +62,19 @@ require("lazy").setup({
         },
       },
     },
+    {
+      "nvim-telescope/telescope.nvim",
+    },
+    {
+      "aaronhallaert/advanced-git-search.nvim",
+      dependencies = {
+        "nvim-telescope/telescope.nvim",
+        "tpope/vim-fugitive",
+        "tpope/vim-rhubarb",
+      },
+    },
+    { "nvim-telescope/telescope-live-grep-args.nvim" },
+    { "brenoprata10/nvim-highlight-colors" },
     -- import/override with your plugins
     { import = "plugins" },
   },

@@ -32,10 +32,10 @@ keymap.set("n", "s<down>", "<c-w>j")
 keymap.set("n", "s<right>", "<c-w>l")
 
 -- resize window
-keymap.set("n", "<C-w><left>", "<C-w><")
-keymap.set("n", "<C-w><right>", "<C-w>>")
-keymap.set("n", "<C-w><up>", "<C-w>+")
-keymap.set("n", "<C-w><down>", "<C-w>-")
+keymap.set("n", "<C-w>h", "<C-w><")
+keymap.set("n", "<C-w>l", "<C-w>>")
+keymap.set("n", "<C-w>k", "<C-w>+")
+keymap.set("n", "<C-w>j", "<C-w>-")
 
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
