@@ -29,6 +29,16 @@ require("lazy").setup({
         },
       },
     },
+    { "nvim-neotest/nvim-nio" },
+    { "nvim-neotest/neotest" },
+    {
+      "williamboman/mason.nvim",
+      opts = {
+        ensure_installed = {
+          "gopls",
+        },
+      },
+    },
     {
       "neovim/nvim-lspconfig",
       opts = {
