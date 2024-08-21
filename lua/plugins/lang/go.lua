@@ -1,3 +1,5 @@
+local autogroup = vim.api.nvim_create_augroup("lspFormatting", {})
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -22,12 +24,16 @@ return {
     },
   },
   {
+    "mfussenegger/nvim-dap",
+  },
+  {
     "jose-elias-alvarez/null-ls.nvim",
     opts = function(_, opts)
       local nls = require("null-ls")
       vim.list_extend(opts.sources, {
         nls.builtins.formatting.gofumpt,
         nls.builtins.diagnostics.golangci_lint,
+        nls.builtins.formatting.golines,
       })
     end,
   },
