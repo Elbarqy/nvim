@@ -46,3 +46,6 @@ end, opts)
 keymap.set("i", "<A-k>", "<ESC>:m .-2<CR>==gi")
 keymap.set("i", "<A-j>", "<ESC>:m .+1<CR>==gi")
 --vnoremap <A-k> :m '<-2<CR>gv=gv
+
+-- Plugin keymap
+keymap.set("n", "<leader>z", "Twilight")

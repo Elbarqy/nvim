@@ -30,12 +30,17 @@ require("lazy").setup({
       },
     },
     { "nvim-neotest/nvim-nio" },
-    { "nvim-neotest/neotest" },
+    {
+      "fredrikaverpil/neotest-golang",
+    },
     {
       "williamboman/mason.nvim",
       opts = {
         ensure_installed = {
           "gopls",
+          "goimports",
+          "gofumpt",
+          "delve",
         },
       },
     },
