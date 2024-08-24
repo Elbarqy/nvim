@@ -48,4 +48,10 @@ keymap.set("i", "<A-j>", "<ESC>:m .+1<CR>==gi")
 --vnoremap <A-k> :m '<-2<CR>gv=gv
 
 -- Plugin keymap
-keymap.set("n", "<leader>z", "Twilight")
+keymap.set("n", "<leader>z", ":Twilight<Return>")
+
+-- Debugger
+keymap.set("n", "<leader>dt", ":DapUiToggle<CR>", opts)
+keymap.set("n", "<leader>db", ":DapToggleBreakpoint<CR>", opts)
+keymap.set("n", "<leader>dc", ":DapContinue<CR>", opts)
+keymap.set("n", "<leader>dr", ":lua require('dapui').open({rest:true})", opts)
