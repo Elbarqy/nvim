@@ -32,10 +32,10 @@ keymap.set("n", "s<down>", "<c-w>j")
 keymap.set("n", "s<right>", "<c-w>l")
 
 -- resize window
-keymap.set("n", "<C-w>h", "<C-w><")
-keymap.set("n", "<C-w>l", "<C-w>>")
-keymap.set("n", "<C-w>k", "<C-w>+")
-keymap.set("n", "<C-w>j", "<C-w>-")
+-- keymap.set("n", "<C-w>h", "<C-w><")
+-- keymap.set("n", "<C-w>l", "<C-w>>")
+-- keymap.set("n", "<C-w>k", "<C-w>+")
+-- keymap.set("n", "<C-w>j", "<C-w>-")
 
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
@@ -55,3 +55,6 @@ keymap.set("n", "<leader>dt", ":DapUiToggle<CR>", opts)
 keymap.set("n", "<leader>db", ":DapToggleBreakpoint<CR>", opts)
 keymap.set("n", "<leader>dc", ":DapContinue<CR>", opts)
 keymap.set("n", "<leader>dr", ":lua require('dapui').open({rest:true})", opts)
+
+-- ray-x go Plugin
+keymap.set("n", "<leader>gi", ":GoFillStruct")

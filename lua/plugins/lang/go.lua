@@ -7,7 +7,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     config = function()
-      require("go").setup()
+      require("go").setup({})
     end,
     event = { "CmdlineEnter" },
     ft = { "go", "gomod" },
@@ -28,6 +28,21 @@ return {
     config = function()
       require("dap-go").setup()
     end,
+  },
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    -- keep in mind, it might break everything
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "mfussenegger/nvim-dap", -- (optional) only if you use `gopher.dap`
+    },
+    -- (optional) will update plugin's deps on every update
+    build = function()
+      vim.cmd.GoInstallDeps()
+    end,
+    opts = {},
   },
 }
 -- gophe.nvim for boilerplat code
