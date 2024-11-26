@@ -2,7 +2,6 @@ return {
   "nvim-telescope/telescope.nvim",
   tag = "0.1.4",
   dependencies = {
-    "ThePrimeagen/harpoon",
     "nvim-lua/plenary.nvim",
     "joshmedeski/telescope-smart-goto.nvim",
     "debugloop/telescope-undo.nvim",
@@ -10,7 +9,7 @@ return {
   },
   config = function()
     local builtin = require("telescope.builtin")
-    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
+    vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Find Files" })
     vim.keymap.set(
       "n",
       "<leader>fg",
@@ -32,7 +31,7 @@ return {
     vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "Search Git Commits" })
     vim.keymap.set("n", "<leader>gb", builtin.git_bcommits, { desc = "Search Git Commits for Buffer" })
     vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Find Keymaps" })
-    vim.keymap.set("n", "<leader>/", function()
+    vim.keymap.set("n", "<leader>ff", function()
       -- You can pass additional configuration to telescope to change theme, layout, etc.
       require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
         winblend = 10,
@@ -113,8 +112,6 @@ return {
         },
       },
     })
-
-    require("telescope").load_extension("neoclip")
 
     require("telescope").load_extension("fzf")
 

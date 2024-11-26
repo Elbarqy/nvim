@@ -34,19 +34,7 @@ require("lazy").setup({
       "fredrikaverpil/neotest-golang",
     },
     {
-      "williamboman/mason.nvim",
-      opts = {
-        ensure_installed = {
-          "gopls",
-          "goimports",
-          "gofumpt",
-          "delve",
-        },
-      },
-    },
-    {
-      "neovim/nvim-lspconfig",
-      opts = {},
+      "dense-analysis/ale",
     },
     {
       "nvim-telescope/telescope.nvim",

@@ -55,6 +55,26 @@ keymap.set("n", "<leader>dt", ":DapUiToggle<CR>", opts)
 keymap.set("n", "<leader>db", ":DapToggleBreakpoint<CR>", opts)
 keymap.set("n", "<leader>dc", ":DapContinue<CR>", opts)
 keymap.set("n", "<leader>dr", ":lua require('dapui').open({rest:true})", opts)
+-- REFACTOR
+keymap.set("n", "<leader>r", ":lua vim.lsp.buf.rename()", opts)
 
 -- ray-x go Plugin
 keymap.set("n", "<leader>gi", ":GoFillStruct")
+
+--
+-- Create an augroup for Go file settings
+vim.api.nvim_create_augroup("GoKeyMappings", { clear = true })
+
+-- Set key mappings specifically for Go files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "go",
+  group = "GoKeyMappings",
+  callback = function()
+    local opts = { noremap = true, silent = true }
+
+    -- Set key mappings for Go files
+    vim.api.nvim_buf_set_keymap(0, "n", "<leader>cf", "<cmd>GoFmt<CR>", opts) -- Format
+    vim.api.nvim_buf_set_keymap(0, "n", "<leader>tt", "<cmd>GoTest<CR>", opts) -- Run tests
+    -- Add any other Go-specific key mappings here
+  end,
+})

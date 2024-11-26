@@ -1,37 +1,8 @@
 return {
   {
-    "ray-x/go.nvim",
-    dependencies = { -- optional packages
-      "ray-x/guihua.lua",
-      "neovim/nvim-lspconfig",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function()
-      require("go").setup({})
-    end,
-    event = { "CmdlineEnter" },
-    ft = { "go", "gomod" },
-    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
-  },
-  {
-    "rcarriga/nvim-dap-ui",
-    dependencies = { "mfussenegger/nvim-dap" },
-    config = function()
-      require("dapui").setup()
-    end,
-  },
-  {
-    "theHamsta/nvim-dap-virtual-text",
-  },
-  {
-    "leoluz/nvim-dap-go",
-    config = function()
-      require("dap-go").setup()
-    end,
-  },
-  {
     "olexsmir/gopher.nvim",
     ft = "go",
+    -- branch = "develop", -- if you want develop branch
     -- keep in mind, it might break everything
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -43,6 +14,32 @@ return {
       vim.cmd.GoInstallDeps()
     end,
     opts = {},
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "gopls",
+        "goimports",
+        "gofumpt",
+        "delve",
+        "impl",
+      },
+    },
+  },
+  {
+    "ray-x/go.nvim",
+    dependencies = { -- optional packages
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("go").setup()
+    end,
+    event = { "CmdlineEnter" },
+    ft = { "go", "gomod" },
+    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
 }
 -- gophe.nvim for boilerplat code
