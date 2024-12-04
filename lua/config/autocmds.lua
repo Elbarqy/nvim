@@ -25,5 +25,4 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     --vim.cmd(":!yamlfmt " .. fileName)
     vim.lsp.buf.format()
   end,
-  group = autocmd_group,
 })

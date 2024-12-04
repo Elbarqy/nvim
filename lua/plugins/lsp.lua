@@ -3,11 +3,43 @@ return {
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+    -- html
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/nvim-cmp",
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
   },
   config = function()
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = { "gopls" },
+    })
+
+    local lspconfig = require("lspconfig")
+    local cmp = require("cmp")
+    local luasnip = require("luasnip")
+
+    -- Web Development Language Servers
+    lspconfig.html.setup({})
+    lspconfig.cssls.setup({})
+    lspconfig.tsserver.setup({})
+    lspconfig.emmet_language_server.setup({})
+
+    cmp.setup({
+      snippet = {
+        expand = function(args)
+          luasnip.lsp_expand(args.body)
+        end,
+      },
+      sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "path" },
+        { name = "tailwindcss" },
+      }),
     })
 
     require("lspconfig").gopls.setup({

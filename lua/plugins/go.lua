@@ -41,6 +41,7 @@ return {
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
+  { "pest-parser/pest.vim" },
 }
 -- gophe.nvim for boilerplat code
 -- local autogroup = vim.api.nvim_create_augroup("lspFormatting", {})
