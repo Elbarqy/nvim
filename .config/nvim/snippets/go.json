@@ -1,0 +1,9 @@
+{
+  "context time out":{
+    "prefix":"tout",
+    "body":[
+      "\tctx, cancel := context$1.WithTimeout(context.Background(), $2*time.Millisecond)",
+      "\tdefer cancel()"
+    ]
+  }
+}
