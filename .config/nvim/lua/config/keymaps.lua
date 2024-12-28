@@ -48,7 +48,7 @@ keymap.set("i", "<A-j>", "<ESC>:m .+1<CR>==gi")
 --vnoremap <A-k> :m '<-2<CR>gv=gv
 
 -- Plugin keymap
-keymap.set("n", "<leader>z", ":Twilight<Return>")
+keymap.set("n", "<leader>z", ":Twilight<CR>")
 
 -- Debugger
 keymap.set("n", "<leader>dt", ":DapUiToggle<CR>", opts)
@@ -60,6 +60,9 @@ keymap.set("n", "<leader>r", ":lua vim.lsp.buf.rename()", opts)
 
 -- ray-x go Plugin
 keymap.set("n", "<leader>gi", ":GoFillStruct<CR>")
+keymap.set("n", "<leader>g1", ":GoIfErr<CR>")
+keymap.set("n", "<loader>g2", ":GoAddTag json<CR>")
+keymap.set("n", "<loader>g3", ":GoRmTag json<CR>")
 
 --
 -- Create an augroup for Go file settings

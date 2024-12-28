@@ -34,9 +34,6 @@ require("lazy").setup({
       "fredrikaverpil/neotest-golang",
     },
     {
-      "dense-analysis/ale",
-    },
-    {
       "nvim-telescope/telescope.nvim",
     },
     {
